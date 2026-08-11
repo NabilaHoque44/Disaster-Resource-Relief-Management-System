@@ -1,37 +1,23 @@
 #include <stdio.h>
-
-#include <stdlib.h> //in line 180, we have exit(). to use this function, we have used this header file.
-
-//exit(0)- gives a message to the operating system that the program is terminated successfully without any error.
-
-#include <string.h> // for strcmp() function/used to compare two texts or strings.
-//line no. 130-131
-
+#include <stdlib.h>
+#include <string.h>
 /* ==============================
    CONSTANTS
    ============================== */
-
-//why #define? easy to change the number anytime i want.
-
-
-#define MAX_RESOURCE 100 //relief items
+#define MAX_RESOURCE 100
 #define MAX_VICTIM 100
 #define MAX_VOLUNTEER 100
-#define MAX_DISTRIBUTION 100 //how many times the distribution action happened
-
-
+#define MAX_DISTRIBUTION 100
 /* ==============================
    RESOURCE STRUCTURE
    ============================== */
-struct Resource //struct: combines multiple variables of different data types
-//struct resource: custom data type
-
+struct Resource
 {
     int id;
-    char name[50]; //e.g. rice
-    char category[30]; // what kind of relief item? e.g. food
-    int quantity; //amount
-    char unit[20]; //unit of measurement; e.g. kg
+    char name[50];
+    char category[30];
+    int quantity;
+    char unit[20];
 };
 /* ==============================
    VICTIM STRUCTURE
@@ -43,7 +29,7 @@ struct Victim
     int age;
     char area[50];
     int familyMembers;
-    char priority[20]; //high/medium/low
+    char priority[20];
 };
 /* ==============================
    VOLUNTEER STRUCTURE
@@ -52,8 +38,8 @@ struct Volunteer
 {
     int id;
     char name[50];
-    char phone[20]; //if we use int, we cannot add 0/+ before the starting of a phone number.
-    char area[50]; //which area he/she is working for
+    char phone[20];
+    char area[50];
 };
 /* ==============================
    DISTRIBUTION STRUCTURE
@@ -67,7 +53,7 @@ struct Distribution
 /* ==============================
    GLOBAL VARIABLES
    ============================== */
-struct Resource resource[MAX_RESOURCE]; //resource,victim,volunteer,distribution all are array
+struct Resource resource[MAX_RESOURCE];
 struct Victim victim[MAX_VICTIM];
 struct Volunteer volunteer[MAX_VOLUNTEER];
 struct Distribution distribution[MAX_DISTRIBUTION];
@@ -76,10 +62,10 @@ int totalVictim = 0;
 int totalVolunteer = 0;
 int totalDistribution = 0;
 /* ==============================
-   FUNCTION PROTOTYPES                          //pre-declaring the function
+   FUNCTION PROTOTYPES
    ============================== */
 /* Login and Main Menu */
-void login(); //return type is void
+void login();
 void mainMenu();
 /* Resource Management */
 void resourceMenu();
@@ -105,7 +91,7 @@ void updateVolunteer();
 void deleteVolunteer();
 /* Relief Distribution */
 void reliefMenu();
-void allocateRelief(); //allocate means distribute
+void allocateRelief();
 void distributionHistory();
 /* Reports */
 void reportMenu();
@@ -132,10 +118,10 @@ void login()
     printf("\n   DISASTER RELIEF MANAGEMENT");
     printf("\n==============================");
     printf("\nUsername : ");
-    scanf("%19s", username); // why 19? in 20 number space, compiler will put \0 and it means that it ends here.
+    scanf("%19s", username);
     printf("Password : ");
     scanf("%19s", password);
-    if(strcmp(username, "admin") == 0 && //compares my given input with info given here and if the difference is 0 that means they are matched.
+    if(strcmp(username, "admin") == 0 &&
        strcmp(password, "1234") == 0)
     {
         printf("\nLogin Successful!\n");
@@ -152,7 +138,7 @@ void login()
 void mainMenu()
 {
     int choice;
-    while(1) //while(1) is an infinite loop.
+    while(1)
     {
         printf("\n==============================");
         printf("\n          MAIN MENU");
@@ -187,7 +173,7 @@ void mainMenu()
                 saveVictims();
                 saveVolunteers();
                 printf("\nThank You.\n");
-                exit(0); //break could have been used but break cannot stop the execution of while(1).
+                exit(0);
             default:
                 printf("\nInvalid Choice!\n");
         }
@@ -388,8 +374,7 @@ void sortResource()
 void victimMenu()
 {
     int choice;
-    while(1)  // while(1) is an infinite loop.
-
+    while(1)
     {
         printf("\n==============================");
         printf("\n       VICTIM MANAGEMENT");
