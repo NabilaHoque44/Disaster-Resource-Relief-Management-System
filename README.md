@@ -12,9 +12,18 @@ A C-based console application for managing resource distribution and record-keep
 - C programming language (including file handling for data persistence)
 
 ## How to Run
-1. Clone this repository:
-   git clone https://github.com/NabilaHoque44/disaster-relief-management-system.git
 
+Step 1: Clone this repository using this command in your terminal:
+git clone https://github.com/NabilaHoque44/Disaster-Resource-Relief-Management-System.git
+
+Step 2: Navigate into the project folder:
+cd Disaster-Resource-Relief-Management-System
+
+Step 3: Compile the program:
+gcc "Project Code.c" -o disaster_relief
+
+Step 4: Run it:
+./disaster_relief
 
 ## Team Members
 - Nabila Hoque
