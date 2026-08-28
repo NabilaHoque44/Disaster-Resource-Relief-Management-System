@@ -1,2 +1,13 @@
-# CSE-103_project
-A disaster is an unexpected situation, caused by nature or by human action that can disrupt a normal life. This project uses C programming to build a Disaster Relief Resource Management System, a console-based application that organizes and manages disaster relief operations efficiently through five integrated modules. 
+# Disaster Relief Resource Management System
+A C-based console application for managing resource distribution and record-keeping during disaster relief efforts. The system allows users to add, view, update, and delete resource records, victim information, volunteer details, distribution data. Data is saved to a file so it persists between sessions.
+
+## Features
+- Add new records
+- View existing records
+- Update records
+- Delete records
+- Data is saved to a file (persists after the program closes)
+  
+## Built with
+- C programming language (including file handling for data persistence)
+ 
